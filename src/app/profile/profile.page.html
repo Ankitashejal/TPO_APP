@@ -1,4 +1,19 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profile</ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+ -->
+ <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Profile</ion-title>
   </ion-toolbar>
@@ -10,5 +25,33 @@
       <ion-title size="large">Profile</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
 
+  <ion-card>
+    <!-- Profile picture -->
+    <ion-img src="assets/profile-pic.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ userProfile.name }}</ion-card-title>
+      <ion-card-subtitle>{{ userProfile.title }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- Bio -->
+      <p>Bio: {{ userProfile.bio }}</p>
+      
+      <!-- Skills -->
+      <p>Skills: {{ userProfile.skills.join(', ') }}</p>
+      
+      <!-- Education -->
+      <p>Education: {{ userProfile.education }}</p>
+      
+      <!-- Experience -->
+      <p>Experience: {{ userProfile.experience }}</p>
+      
+      <!-- Contact Info -->
+      <p>Contact: {{ userProfile.contactInfo }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Edit Profile Button -->
+  <ion-button expand="block" (click)="editProfile()">Edit Profile</ion-button>
+</ion-content>
